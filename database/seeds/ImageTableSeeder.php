@@ -11,6 +11,10 @@ class ImageTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $faker=app(Faker\Generator::class);
+
+        $images=factory(\App\Models\Image::class)->times(10)->make();
+
+        \App\Models\Image::insert($images->toArray());
     }
 }
