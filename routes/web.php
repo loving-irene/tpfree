@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/','HomeController@index')->name('home');
+Route::get('/','ImagesController@list')->name('home');
 
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -32,3 +32,10 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
 Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
 Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+
+//图片相关操作
+Route::resource('images','ImagesController');
+Route::get('images/download/{image}','ImagesController@download')->name('images.download');
+
+//专门的测试链接
+Route::get('test','TestController@test')->name('test');

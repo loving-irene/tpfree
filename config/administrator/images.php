@@ -65,7 +65,7 @@ return [
             'type' => 'image',
 
             // 图片上传必须设置图片存放路径
-            'location' => public_path() . '/upload/images/',
+            'location' => public_path() . '/upload/images/'.date('Ym/d',time()).'/',
         ],
     ],
 

@@ -15,6 +15,7 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
+            session()->flash('danger',"请先登陆才能使用下载功能");
             return route('login');
         }
     }
