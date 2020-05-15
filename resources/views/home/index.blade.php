@@ -19,8 +19,8 @@
             @endforeach
         </div>
         <div class="row">
-            {{$images->links()}}
-{{--            {!! $images->render() !!}--}}
+{{--            {{$images->links()}}--}}
+            {!! $images->appends(Request::except('page'))->render() !!}
         </div>
     </div>
 
